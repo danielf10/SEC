@@ -66,7 +66,7 @@
         <!-- si la peticion es "/" dejamos pasar a todos -->
         <security:intercept-url pattern="/" access="permitAll" />
         <!-- toda peticion con el texto /sesion/ antes de el nombre de la peticion
-        solo los que iniciaron sesion pueden acceder -->
+        solo los que iniciaron sesion pueden acceder   // aqui se cambian los permisos   -->
         <security:intercept-url pattern="/sesion/*" access="isAuthenticated()" />
         <security:intercept-url pattern="/admin/*" access=" hasRole('ROLE_Admin')" />
         <security:intercept-url pattern="/root/*" access="hasRole('ROLE_Root')" />

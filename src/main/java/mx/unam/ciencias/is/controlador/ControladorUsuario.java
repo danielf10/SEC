@@ -31,8 +31,9 @@ public class ControladorUsuario {
         String nombre = request.getParameter("nombre");
         String correo = request.getParameter("correo");
         String contrasenia = request.getParameter("contrasenia");
+        String rol = request.getParameter("rol");
         
-        Usuario nuevo = new Usuario(nombre,correo,contrasenia);
+        Usuario nuevo = new Usuario(nombre,correo,contrasenia,rol);
         usuario_bd.guardar(nuevo);
         model.addAttribute("parametro","ME Guarde: "+nombre);
         return new ModelAndView("index",model);

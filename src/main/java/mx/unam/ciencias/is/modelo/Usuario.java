@@ -42,7 +42,21 @@ public class Usuario implements Serializable{
     //La contrasenia del usuario
     @Column(name = "contrasenia")
     private String contrasenia;
+    
+    //La rol del usuario
+    @Column(name = "rol")
+    private String rol;
 
+    
+     public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+    
+    
     public long getIdPersona() {
         return idPersona;
     }
@@ -78,17 +92,19 @@ public class Usuario implements Serializable{
     public Usuario() {
     }
 
-    public Usuario(long idPersona, String nombre, String correo, String contrasenia) {
+    public Usuario(long idPersona, String nombre, String correo, String contrasenia,String rol) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
+        this.rol = rol;
     }
 
-    public Usuario(String nombre, String correo, String contrasenia) {
+    public Usuario(String nombre, String correo, String contrasenia, String rol) {
         this.nombre = nombre;
         this.correo = correo;
         this.contrasenia = contrasenia;
+        this.rol = rol;
     }
     
     @OneToMany(mappedBy = "usuario")
